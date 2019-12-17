@@ -1,2 +1,2 @@
 # SemanticUI_Spring
-semanticUI 
+semanticUI 정리
