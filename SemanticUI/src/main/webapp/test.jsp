@@ -25,7 +25,7 @@
 	  	</tr>
 	  </thead>
 	  <tbody>
-	  
+
 	  	<tr>
 	      <td class="collapsing">
 	        2
