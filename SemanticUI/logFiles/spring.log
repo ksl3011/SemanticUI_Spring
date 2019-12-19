@@ -1,21 +1,21 @@
-2019-12-17 00:15:08.872  INFO 11556 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Starting SemanticUiApplication on DESKTOP-S1DF2OB with PID 11556 (E:\JAVA\workspace\SemanticUI\target\classes started by ABC in E:\JAVA\workspace\SemanticUI)
-2019-12-17 00:15:08.876 DEBUG 11556 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
-2019-12-17 00:15:08.877  INFO 11556 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : No active profile set, falling back to default profiles: default
-2019-12-17 00:15:08.928  INFO 11556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-12-17 00:15:08.928  INFO 11556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-12-17 00:15:10.412  INFO 11556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-17 00:15:10.418  INFO 11556 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-17 00:15:10.418  INFO 11556 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
-2019-12-17 00:15:10.677  INFO 11556 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2019-12-17 00:15:10.682  INFO 11556 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-17 00:15:10.687  INFO 11556 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1759 ms
-2019-12-17 00:15:10.866  INFO 11556 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-17 00:15:11.047  INFO 11556 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-12-17 00:15:11.080  INFO 11556 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2019-12-17 00:15:11.086  INFO 11556 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+2019-12-19 09:15:50.694  INFO 9592 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Starting SemanticUiApplication on DESKTOP-S1DF2OB with PID 9592 (C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-19 09:15:50.709 DEBUG 9592 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-19 09:15:50.710  INFO 9592 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : No active profile set, falling back to default profiles: default
+2019-12-19 09:15:50.813  INFO 9592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-19 09:15:50.814  INFO 9592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-19 09:15:52.880  INFO 9592 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-19 09:15:52.894  INFO 9592 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 09:15:52.895  INFO 9592 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-19 09:15:53.205  INFO 9592 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-12-19 09:15:53.215  INFO 9592 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 09:15:53.216  INFO 9592 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2402 ms
+2019-12-19 09:15:53.475  INFO 9592 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 09:15:53.786  INFO 9592 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-19 09:15:53.827  INFO 9592 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-19 09:15:53.833  INFO 9592 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-12-17 00:15:11.088 ERROR 11556 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2019-12-19 09:15:53.837 ERROR 9592 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
 ***************************
 APPLICATION FAILED TO START
@@ -29,36 +29,36 @@ Action:
 
 Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
 
-2019-12-17 00:15:11.091  INFO 11556 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-17 00:16:05.488  INFO 2904 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Starting SemanticUiApplication on DESKTOP-S1DF2OB with PID 2904 (E:\JAVA\workspace\SemanticUI\target\classes started by ABC in E:\JAVA\workspace\SemanticUI)
-2019-12-17 00:16:05.491 DEBUG 2904 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
-2019-12-17 00:16:05.492  INFO 2904 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : No active profile set, falling back to default profiles: default
-2019-12-17 00:16:05.565  INFO 2904 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-12-17 00:16:05.565  INFO 2904 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-12-17 00:16:07.010  INFO 2904 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-17 00:16:07.020  INFO 2904 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-17 00:16:07.020  INFO 2904 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
-2019-12-17 00:16:07.256  INFO 2904 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2019-12-17 00:16:07.263  INFO 2904 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-17 00:16:07.264  INFO 2904 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1699 ms
-2019-12-17 00:16:07.450  INFO 2904 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-17 00:16:07.640  INFO 2904 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-12-17 00:16:07.670  INFO 2904 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2019-12-17 00:16:07.670  INFO 2904 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-12-17 00:16:07.680 ERROR 2904 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2019-12-17 00:16:07.680  INFO 2904 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-19 09:15:53.841  INFO 9592 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-19 09:29:34.067  INFO 5052 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Starting SemanticUiApplication on DESKTOP-S1DF2OB with PID 5052 (C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-19 09:29:34.073 DEBUG 5052 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-19 09:29:34.074  INFO 5052 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : No active profile set, falling back to default profiles: default
+2019-12-19 09:29:34.148  INFO 5052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-19 09:29:34.148  INFO 5052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-19 09:29:35.838  INFO 5052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-19 09:29:35.849  INFO 5052 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 09:29:35.849  INFO 5052 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-19 09:29:36.126  INFO 5052 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-12-19 09:29:36.133  INFO 5052 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 09:29:36.133  INFO 5052 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1984 ms
+2019-12-19 09:29:36.360  INFO 5052 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 09:29:36.645  INFO 5052 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-19 09:29:36.701  INFO 5052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-19 09:29:36.707  INFO 5052 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Started SemanticUiApplication in 3.224 seconds (JVM running for 3.847)
+2019-12-19 09:29:48.327  INFO 5052 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-19 09:29:48.328  INFO 5052 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-19 09:29:48.337  INFO 5052 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-12-19 09:53:18.234  INFO 2736 --- [restartedMain] com.edu.SemanticUiApplication            : Starting SemanticUiApplication on DESKTOP-S1DF2OB with PID 2736 (C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-19 09:53:18.238  INFO 2736 --- [restartedMain] com.edu.SemanticUiApplication            : No active profile set, falling back to default profiles: default
+2019-12-19 09:53:18.321  INFO 2736 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-19 09:53:18.321  INFO 2736 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-19 09:53:20.002  INFO 2736 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-19 09:53:20.018  INFO 2736 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-19 09:53:20.018  INFO 2736 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-19 09:53:20.302  INFO 2736 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-12-19 09:53:20.312  INFO 2736 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-19 09:53:20.314  INFO 2736 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1993 ms
+2019-12-19 09:53:20.560  INFO 2736 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-19 09:53:20.906  INFO 2736 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-19 09:53:20.973  INFO 2736 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-19 09:53:20.977  INFO 2736 --- [restartedMain] com.edu.SemanticUiApplication            : Started SemanticUiApplication in 3.343 seconds (JVM running for 3.901)
