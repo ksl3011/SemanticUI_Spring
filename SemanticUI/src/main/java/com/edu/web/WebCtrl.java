@@ -16,7 +16,7 @@ import com.edu.vo.BoardVO;
 public class WebCtrl {
 	private String webUrl = "board"; 
 	private String webUrl2 = "contents"; 
-	private int total = 1001;
+	private int total = 10000000;
 	
 	@RequestMapping(value = "/board")
 	public String inputData(HttpServletRequest req) {
@@ -68,7 +68,7 @@ public class WebCtrl {
 		if(page == 0) {
 			page = ((((nowPage-1)/10)+1)*10)+1;
 		}else if(page == -1) {
-			page = nowPage-1;
+			page = (((nowPage-1)/10)*10);
 		}else if(page == -10) {
 			page = ((total-1)/10)+1;
 		}else if(page == -11) {
