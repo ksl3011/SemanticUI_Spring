@@ -7,16 +7,18 @@ public class BoardVO {
 	private String contents;
 	private String regDt;
 	private String id;
+	private float star;
 	
 	public BoardVO() {}
 
-	public BoardVO(int no, String title, String contents, String regDt, String id) {
+	public BoardVO(int no, String title, String contents, String regDt, String id, float star) {
 		super();
 		this.no = no;
 		this.title = title;
 		this.contents = contents;
 		this.regDt = regDt;
 		this.id = id;
+		this.star = star;
 	}
 
 	public int getNo() {
@@ -59,10 +61,18 @@ public class BoardVO {
 		this.id = id;
 	}
 
+	public float getStar() {
+		return star;
+	}
+
+	public void setStar(float star) {
+		this.star = star;
+	}
+
 	@Override
 	public String toString() {
-		return "board [no=" + no + ", title=" + title + ", contents=" + contents + ", regDt=" + regDt + ", id=" + id
-				+ "]";
+		return "BoardVO [no=" + no + ", title=" + title + ", contents=" + contents + ", regDt=" + regDt + ", id=" + id
+				+ ", star=" + star + "]";
 	}
-	
+
 }
