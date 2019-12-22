@@ -1,64 +1,680 @@
-2019-12-19 09:15:50.694  INFO 9592 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Starting SemanticUiApplication on DESKTOP-S1DF2OB with PID 9592 (C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
-2019-12-19 09:15:50.709 DEBUG 9592 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
-2019-12-19 09:15:50.710  INFO 9592 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : No active profile set, falling back to default profiles: default
-2019-12-19 09:15:50.813  INFO 9592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-12-19 09:15:50.814  INFO 9592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-12-19 09:15:52.880  INFO 9592 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-19 09:15:52.894  INFO 9592 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-19 09:15:52.895  INFO 9592 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
-2019-12-19 09:15:53.205  INFO 9592 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2019-12-19 09:15:53.215  INFO 9592 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-19 09:15:53.216  INFO 9592 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2402 ms
-2019-12-19 09:15:53.475  INFO 9592 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-19 09:15:53.786  INFO 9592 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-12-19 09:15:53.827  INFO 9592 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2019-12-19 09:15:53.833  INFO 9592 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+2019-12-23 00:16:14.944  INFO 2896 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 2896 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 00:16:14.956 DEBUG 2896 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 00:16:14.957  INFO 2896 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 00:16:15.958  WARN 2896 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 00:16:16.784  WARN 2896 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardDAOImpl': Unsatisfied dependency expressed through field 'sqlSessionTemplate'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+2019-12-23 00:16:16.797  INFO 2896 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-12-19 09:15:53.837 ERROR 9592 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2019-12-23 00:16:16.809 ERROR 2896 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-***************************
-APPLICATION FAILED TO START
-***************************
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardDAOImpl': Unsatisfied dependency expressed through field 'sqlSessionTemplate'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:125) [spring-boot-test-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) [spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) [spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123) [spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) [spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) [spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) [spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98) [spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:337) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:342) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:337) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.ReferencePipeline$2$1.accept(Unknown Source) ~[na:1.8.0_221]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.ReferencePipeline$Head.forEach(Unknown Source) ~[na:1.8.0_221]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:336) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:259) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:252) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at java.util.Optional.orElseGet(Unknown Source) ~[na:1.8.0_221]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:251) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at java.util.ArrayList.forEach(Unknown Source) ~[na:1.8.0_221]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at java.util.ArrayList.forEach(Unknown Source) ~[na:1.8.0_221]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:229) ~[.cp/:na]
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:197) ~[.cp/:na]
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:211) ~[.cp/:na]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:191) ~[.cp/:na]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:137) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:89) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) ~[.cp/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 83 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 96 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 110 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:595) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:475) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:615) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:180) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$fa888837.CGLIB$sqlSessionFactory$0(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$fa888837$$FastClassBySpringCGLIB$$a09e5f0d.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$fa888837.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_221]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 111 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:122) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:94) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:593) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	... 124 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:137) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:130) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.5.3.jar:3.5.3]
+	... 126 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116) ~[mybatis-3.5.3.jar:3.5.3]
+	... 130 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116) ~[mybatis-3.5.3.jar:3.5.3]
+	... 132 common frames omitted
 
-Description:
+2019-12-23 00:16:16.817 ERROR 2896 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@31e5415e] to prepare test instance [com.edu.cmn.SemanticUiApplicationTests@15bc339]
 
-Web server failed to start. Port 8080 was already in use.
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123) ~[spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) ~[spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98) [spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:337) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:342) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:337) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.ReferencePipeline$2$1.accept(Unknown Source) ~[na:1.8.0_221]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Unknown Source) ~[na:1.8.0_221]
+	at java.util.stream.ReferencePipeline$Head.forEach(Unknown Source) ~[na:1.8.0_221]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:336) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:259) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:252) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at java.util.Optional.orElseGet(Unknown Source) ~[na:1.8.0_221]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:251) [junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at java.util.ArrayList.forEach(Unknown Source) ~[na:1.8.0_221]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at java.util.ArrayList.forEach(Unknown Source) ~[na:1.8.0_221]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:229) ~[.cp/:na]
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:197) ~[.cp/:na]
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:211) ~[.cp/:na]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:191) ~[.cp/:na]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:137) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:89) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) ~[.cp/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardDAOImpl': Unsatisfied dependency expressed through field 'sqlSessionTemplate'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:125) ~[spring-boot-test-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 65 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionTemplate' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 83 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 96 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 110 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:595) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:475) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:615) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:180) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$fa888837.CGLIB$sqlSessionFactory$0(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$fa888837$$FastClassBySpringCGLIB$$a09e5f0d.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$fa888837.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_221]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 111 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes\mapper\testmapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:122) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:94) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:593) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	... 124 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:137) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:130) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.5.3.jar:3.5.3]
+	... 126 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'testVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116) ~[mybatis-3.5.3.jar:3.5.3]
+	... 130 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: testVO
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116) ~[mybatis-3.5.3.jar:3.5.3]
+	... 132 common frames omitted
 
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2019-12-19 09:15:53.841  INFO 9592 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-19 09:29:34.067  INFO 5052 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Starting SemanticUiApplication on DESKTOP-S1DF2OB with PID 5052 (C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
-2019-12-19 09:29:34.073 DEBUG 5052 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
-2019-12-19 09:29:34.074  INFO 5052 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : No active profile set, falling back to default profiles: default
-2019-12-19 09:29:34.148  INFO 5052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-12-19 09:29:34.148  INFO 5052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-12-19 09:29:35.838  INFO 5052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-19 09:29:35.849  INFO 5052 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-19 09:29:35.849  INFO 5052 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
-2019-12-19 09:29:36.126  INFO 5052 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2019-12-19 09:29:36.133  INFO 5052 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-19 09:29:36.133  INFO 5052 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1984 ms
-2019-12-19 09:29:36.360  INFO 5052 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-19 09:29:36.645  INFO 5052 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-12-19 09:29:36.701  INFO 5052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-19 09:29:36.707  INFO 5052 --- [restartedMain] com.edu.cmn.SemanticUiApplication        : Started SemanticUiApplication in 3.224 seconds (JVM running for 3.847)
-2019-12-19 09:29:48.327  INFO 5052 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-19 09:29:48.328  INFO 5052 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-19 09:29:48.337  INFO 5052 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
-2019-12-19 09:53:18.234  INFO 2736 --- [restartedMain] com.edu.SemanticUiApplication            : Starting SemanticUiApplication on DESKTOP-S1DF2OB with PID 2736 (C:\Users\ABC\git\SemanticUI_Spring\SemanticUI\target\classes started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
-2019-12-19 09:53:18.238  INFO 2736 --- [restartedMain] com.edu.SemanticUiApplication            : No active profile set, falling back to default profiles: default
-2019-12-19 09:53:18.321  INFO 2736 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-12-19 09:53:18.321  INFO 2736 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-12-19 09:53:20.002  INFO 2736 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-19 09:53:20.018  INFO 2736 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-19 09:53:20.018  INFO 2736 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
-2019-12-19 09:53:20.302  INFO 2736 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2019-12-19 09:53:20.312  INFO 2736 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-19 09:53:20.314  INFO 2736 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1993 ms
-2019-12-19 09:53:20.560  INFO 2736 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-19 09:53:20.906  INFO 2736 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-12-19 09:53:20.973  INFO 2736 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-19 09:53:20.977  INFO 2736 --- [restartedMain] com.edu.SemanticUiApplication            : Started SemanticUiApplication in 3.343 seconds (JVM running for 3.901)
+2019-12-23 00:21:02.724  INFO 5220 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 5220 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 00:21:02.726 DEBUG 5220 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 00:21:02.726  INFO 5220 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 00:21:03.703  WARN 5220 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 00:21:05.295  INFO 5220 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:21:05.956  INFO 5220 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.604 seconds (JVM running for 4.75)
+2019-12-23 00:21:06.299  INFO 5220 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:33:24.429  INFO 7096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 7096 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 00:33:24.430 DEBUG 7096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 00:33:24.431  INFO 7096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 00:33:25.366  WARN 7096 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 00:33:26.849  INFO 7096 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:33:27.476  INFO 7096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.443 seconds (JVM running for 4.53)
+2019-12-23 00:33:27.877  INFO 7096 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:34:04.244  INFO 10768 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 10768 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 00:34:04.246 DEBUG 10768 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 00:34:04.246  INFO 10768 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 00:34:05.221  WARN 10768 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 00:34:06.589  INFO 10768 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:34:07.308  INFO 10768 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.448 seconds (JVM running for 4.566)
+2019-12-23 00:34:07.663  INFO 10768 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:52:08.552  INFO 4260 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 4260 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 00:52:08.553 DEBUG 4260 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 00:52:08.553  INFO 4260 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 00:52:09.564  WARN 4260 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 00:52:10.995  INFO 4260 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:52:11.651  INFO 4260 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.44 seconds (JVM running for 4.535)
+2019-12-23 00:52:11.995  INFO 4260 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:52:28.779  INFO 3912 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 3912 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 00:52:28.781 DEBUG 3912 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 00:52:28.782  INFO 3912 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 00:52:29.857  WARN 3912 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 00:52:31.409  INFO 3912 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:52:32.090  INFO 3912 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.726 seconds (JVM running for 4.841)
+2019-12-23 00:52:32.507  INFO 3912 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:52:56.333  INFO 3128 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 3128 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 00:52:56.334 DEBUG 3128 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 00:52:56.334  INFO 3128 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 00:52:57.348  WARN 3128 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 00:52:58.758  INFO 3128 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:52:59.386  INFO 3128 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.434 seconds (JVM running for 4.586)
+2019-12-23 00:52:59.813  INFO 3128 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:54:47.130  INFO 9692 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 9692 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 00:54:47.132 DEBUG 9692 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 00:54:47.132  INFO 9692 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 00:54:48.114  WARN 9692 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 00:54:49.532  INFO 9692 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:54:50.198  INFO 9692 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.414 seconds (JVM running for 4.446)
+2019-12-23 00:54:50.638  INFO 9692 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:55:08.535  INFO 6880 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 6880 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 00:55:08.537 DEBUG 6880 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 00:55:08.537  INFO 6880 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 00:55:09.531  WARN 6880 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 00:55:11.036  INFO 6880 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:55:11.700  INFO 6880 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.531 seconds (JVM running for 4.623)
+2019-12-23 00:55:12.057  INFO 6880 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:57:32.662  INFO 3580 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 3580 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 00:57:32.663 DEBUG 3580 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 00:57:32.664  INFO 3580 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 00:57:33.616  WARN 3580 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 00:57:35.042  INFO 3580 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 00:57:35.649  INFO 3580 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.335 seconds (JVM running for 4.392)
+2019-12-23 00:57:36.104  INFO 3580 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:00:24.029  INFO 1100 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 1100 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:00:24.032 DEBUG 1100 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:00:24.032  INFO 1100 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:00:25.087  WARN 1100 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:00:26.376  INFO 1100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:00:27.118  INFO 1100 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.437 seconds (JVM running for 4.524)
+2019-12-23 01:00:27.527  INFO 1100 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:01:36.965  INFO 10684 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 10684 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:01:36.967 DEBUG 10684 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:01:36.968  INFO 10684 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:01:38.312  WARN 10684 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:01:40.214  INFO 10684 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:01:41.257  INFO 10684 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 4.942 seconds (JVM running for 7.207)
+2019-12-23 01:01:41.756  INFO 10684 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:10:55.296  INFO 1776 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 1776 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:10:55.298 DEBUG 1776 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:10:55.299  INFO 1776 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:10:56.224  WARN 1776 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:10:57.520  INFO 1776 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:10:58.246  INFO 1776 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.365 seconds (JVM running for 4.498)
+2019-12-23 01:10:58.618  INFO 1776 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:11:11.452  INFO 7424 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 7424 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:11:11.454 DEBUG 7424 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:11:11.454  INFO 7424 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:11:12.384  WARN 7424 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:11:13.585  INFO 7424 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:11:14.364  INFO 7424 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.288 seconds (JVM running for 4.407)
+2019-12-23 01:11:14.821  INFO 7424 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:15:00.716  INFO 8256 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 8256 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:15:00.718 DEBUG 8256 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:15:00.718  INFO 8256 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:15:01.748  WARN 8256 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:15:03.234  INFO 8256 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:15:04.200  INFO 8256 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.833 seconds (JVM running for 4.914)
+2019-12-23 01:15:04.752  INFO 8256 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:16:18.743  INFO 2116 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 2116 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:16:18.745 DEBUG 2116 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:16:18.745  INFO 2116 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:16:19.739  WARN 2116 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:16:20.945  INFO 2116 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:16:21.806  INFO 2116 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.498 seconds (JVM running for 4.687)
+2019-12-23 01:16:22.165  INFO 2116 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:16:34.557  INFO 1776 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 1776 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:16:34.558 DEBUG 1776 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:16:34.558  INFO 1776 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:16:35.508  WARN 1776 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:16:36.763  INFO 1776 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:16:37.497  INFO 1776 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.34 seconds (JVM running for 4.61)
+2019-12-23 01:16:37.856  INFO 1776 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:17:13.697  INFO 2196 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 2196 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:17:13.699 DEBUG 2196 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:17:13.699  INFO 2196 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:17:14.645  WARN 2196 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:17:15.937  INFO 2196 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:17:16.680  INFO 2196 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.365 seconds (JVM running for 4.566)
+2019-12-23 01:17:17.050  INFO 2196 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:17:29.380  INFO 6660 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 6660 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:17:29.381 DEBUG 6660 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:17:29.382  INFO 6660 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:17:30.537  WARN 6660 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:17:31.770  INFO 6660 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:17:32.438  INFO 6660 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.461 seconds (JVM running for 4.696)
+2019-12-23 01:17:32.818  INFO 6660 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:17:38.829  INFO 5960 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 5960 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:17:38.831 DEBUG 5960 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:17:38.832  INFO 5960 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:17:39.961  WARN 5960 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:17:41.169  INFO 5960 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:17:41.898  INFO 5960 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.465 seconds (JVM running for 4.604)
+2019-12-23 01:17:42.286  INFO 5960 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:23:18.812  INFO 4920 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 4920 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:23:18.814 DEBUG 4920 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:23:18.815  INFO 4920 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:23:19.849  WARN 4920 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:23:21.071  INFO 4920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:23:21.874  INFO 4920 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.495 seconds (JVM running for 4.655)
+2019-12-23 01:23:22.228  INFO 4920 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:24:44.656  INFO 4392 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 4392 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:24:44.658 DEBUG 4392 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:24:44.659  INFO 4392 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:24:45.723  WARN 4392 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:24:46.948  INFO 4392 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:24:47.757  INFO 4392 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.537 seconds (JVM running for 4.755)
+2019-12-23 01:24:48.119  INFO 4392 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:29:23.956  INFO 3528 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 3528 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:29:23.958 DEBUG 3528 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:29:23.958  INFO 3528 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:29:25.073  WARN 3528 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:29:26.327  INFO 3528 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:29:27.189  INFO 3528 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.653 seconds (JVM running for 4.911)
+2019-12-23 01:29:27.536  INFO 3528 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:34:11.913  INFO 7580 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 7580 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:34:11.914 DEBUG 7580 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:34:11.915  INFO 7580 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:34:12.882  WARN 7580 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:34:14.099  INFO 7580 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:34:14.983  INFO 7580 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.502 seconds (JVM running for 4.618)
+2019-12-23 01:34:15.347  INFO 7580 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:34:45.897  INFO 11152 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 11152 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:34:45.899 DEBUG 11152 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:34:45.899  INFO 11152 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:34:46.809  WARN 11152 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:34:48.110  INFO 11152 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:34:48.855  INFO 11152 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.331 seconds (JVM running for 4.64)
+2019-12-23 01:34:49.186  INFO 11152 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:34:49.187  INFO 11152 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:34:49.211  INFO 11152 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 24 ms
+2019-12-23 01:34:49.320  INFO 11152 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:35:10.670  INFO 8024 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 8024 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:35:10.671 DEBUG 8024 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:35:10.672  INFO 8024 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:35:11.796  WARN 8024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:35:13.096  INFO 8024 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:35:13.795  INFO 8024 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.521 seconds (JVM running for 4.706)
+2019-12-23 01:35:14.130  INFO 8024 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:35:14.131  INFO 8024 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:35:14.155  INFO 8024 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 24 ms
+2019-12-23 01:35:14.352  INFO 8024 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:35:45.916  INFO 8256 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 8256 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:35:45.918 DEBUG 8256 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:35:45.919  INFO 8256 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:35:46.818  WARN 8256 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:35:48.092  INFO 8256 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:35:48.809  INFO 8256 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.272 seconds (JVM running for 4.528)
+2019-12-23 01:35:49.142  INFO 8256 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:35:49.143  INFO 8256 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:35:49.169  INFO 8256 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 25 ms
+2019-12-23 01:35:49.269  INFO 8256 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:36:12.259  INFO 1712 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 1712 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:36:12.261 DEBUG 1712 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:36:12.262  INFO 1712 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:36:13.195  WARN 1712 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:36:14.496  INFO 1712 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:36:15.335  INFO 1712 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.505 seconds (JVM running for 4.714)
+2019-12-23 01:36:15.608  INFO 1712 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:36:15.609  INFO 1712 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:36:15.633  INFO 1712 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 23 ms
+2019-12-23 01:36:15.675  WARN 1712 --- [main] o.s.web.servlet.PageNotFound             : No mapping for POST semantic/post
+2019-12-23 01:36:15.710  INFO 1712 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:36:23.129  INFO 11096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 11096 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:36:23.131 DEBUG 11096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:36:23.132  INFO 11096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:36:24.168  WARN 11096 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:36:25.404  INFO 11096 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:36:26.166  INFO 11096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.44 seconds (JVM running for 4.677)
+2019-12-23 01:36:26.531  INFO 11096 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:36:26.532  INFO 11096 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:36:26.551  INFO 11096 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 19 ms
+2019-12-23 01:36:26.681 DEBUG 11096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : =====================================================
+2019-12-23 01:36:26.682 DEBUG 11096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : return = 
+2019-12-23 01:36:26.682 DEBUG 11096 --- [main] com.edu.cmn.SemanticUiApplicationTests   : =====================================================
+2019-12-23 01:36:26.718  INFO 11096 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:37:48.988  INFO 6940 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 6940 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:37:48.991  INFO 6940 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:37:50.037  WARN 6940 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:37:51.340  INFO 6940 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:37:52.129  INFO 6940 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.533 seconds (JVM running for 4.698)
+2019-12-23 01:37:52.442  INFO 6940 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:37:52.442  INFO 6940 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:37:52.467  INFO 6940 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 25 ms
+2019-12-23 01:37:52.615  INFO 6940 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:41:16.145  INFO 4924 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 4924 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:41:16.147  INFO 4924 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:41:17.131  WARN 4924 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:41:18.382  INFO 4924 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:41:19.143  INFO 4924 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.417 seconds (JVM running for 4.782)
+2019-12-23 01:41:19.599  INFO 4924 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:41:19.600  INFO 4924 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:41:19.627  INFO 4924 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 27 ms
+2019-12-23 01:41:19.781  INFO 4924 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:42:35.474  INFO 6876 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 6876 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:42:35.475 DEBUG 6876 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:42:35.476  INFO 6876 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:42:36.472  WARN 6876 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:42:36.915 DEBUG 6876 --- [main] com.zaxxer.hikari.HikariConfig           : Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@5b480cf9
+2019-12-23 01:42:37.730  INFO 6876 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:42:38.464  INFO 6876 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.365 seconds (JVM running for 5.564)
+2019-12-23 01:42:38.799  INFO 6876 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:42:38.800  INFO 6876 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:42:38.826  INFO 6876 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 26 ms
+2019-12-23 01:42:38.905 DEBUG 6876 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:42:38.906 DEBUG 6876 --- [main] com.edu.board.web.BoardCtrl              : 1/2) Controller: post
+2019-12-23 01:42:38.907 DEBUG 6876 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:42:38.907 DEBUG 6876 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:42:38.907 DEBUG 6876 --- [main] com.edu.board.web.BoardCtrl              : 2/2) Controller: post
+2019-12-23 01:42:38.907 DEBUG 6876 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:42:38.944 DEBUG 6876 --- [main] com.edu.cmn.SemanticUiApplicationTests   : =====================================================
+2019-12-23 01:42:38.944 DEBUG 6876 --- [main] com.edu.cmn.SemanticUiApplicationTests   : return = 
+2019-12-23 01:42:38.944 DEBUG 6876 --- [main] com.edu.cmn.SemanticUiApplicationTests   : =====================================================
+2019-12-23 01:42:38.968  INFO 6876 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:45:55.479  INFO 8492 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 8492 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:45:55.481 DEBUG 8492 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:45:55.482  INFO 8492 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:45:56.457  WARN 8492 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:45:56.861 DEBUG 8492 --- [main] com.zaxxer.hikari.HikariConfig           : Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@5b480cf9
+2019-12-23 01:45:57.778  INFO 8492 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:45:58.573  INFO 8492 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.504 seconds (JVM running for 4.889)
+2019-12-23 01:45:58.869  INFO 8492 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:45:58.869  INFO 8492 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:45:58.890  INFO 8492 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 20 ms
+2019-12-23 01:45:58.977 DEBUG 8492 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:45:58.977 DEBUG 8492 --- [main] com.edu.board.web.BoardCtrl              : 1/2) Controller: post
+2019-12-23 01:45:58.978 DEBUG 8492 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:45:58.978 DEBUG 8492 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:45:58.978 DEBUG 8492 --- [main] com.edu.board.web.BoardCtrl              : 2/2) Controller: post
+2019-12-23 01:45:58.978 DEBUG 8492 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:45:59.020 DEBUG 8492 --- [main] com.edu.cmn.SemanticUiApplicationTests   : =====================================================
+2019-12-23 01:45:59.020 DEBUG 8492 --- [main] com.edu.cmn.SemanticUiApplicationTests   : return = 
+2019-12-23 01:45:59.020 DEBUG 8492 --- [main] com.edu.cmn.SemanticUiApplicationTests   : =====================================================
+2019-12-23 01:45:59.047  INFO 8492 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:46:31.653  INFO 2184 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 2184 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:46:31.655 DEBUG 2184 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:46:31.655  INFO 2184 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:46:32.629  WARN 2184 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:46:33.023 DEBUG 2184 --- [main] com.zaxxer.hikari.HikariConfig           : Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@5b480cf9
+2019-12-23 01:46:33.935  INFO 2184 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:46:34.719  INFO 2184 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.443 seconds (JVM running for 4.732)
+2019-12-23 01:46:35.119  INFO 2184 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:46:35.119  INFO 2184 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:46:35.147  INFO 2184 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 27 ms
+2019-12-23 01:46:35.208  WARN 2184 --- [main] o.s.web.servlet.PageNotFound             : No mapping for GET semantic/post
+2019-12-23 01:46:35.261  INFO 2184 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:46:45.931  INFO 4932 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 4932 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:46:45.932 DEBUG 4932 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:46:45.933  INFO 4932 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:46:46.969  WARN 4932 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:46:47.337 DEBUG 4932 --- [main] com.zaxxer.hikari.HikariConfig           : Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@5b480cf9
+2019-12-23 01:46:48.201  INFO 4932 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:46:49.040  INFO 4932 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.582 seconds (JVM running for 4.94)
+2019-12-23 01:46:49.354  INFO 4932 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:46:49.355  INFO 4932 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:46:49.379  INFO 4932 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 23 ms
+2019-12-23 01:46:49.467 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:46:49.467 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : 1/2) Controller: post
+2019-12-23 01:46:49.467 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:46:49.467 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:46:49.467 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : 2/2) Controller: post
+2019-12-23 01:46:49.467 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:46:49.486 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:46:49.486 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : 1/2) Controller: post
+2019-12-23 01:46:49.486 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:46:49.486 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:46:49.487 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : 2/2) Controller: post
+2019-12-23 01:46:49.487 DEBUG 4932 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:46:49.487 DEBUG 4932 --- [main] com.edu.cmn.SemanticUiApplicationTests   : =====================================
+2019-12-23 01:46:49.487 DEBUG 4932 --- [main] com.edu.cmn.SemanticUiApplicationTests   : 
+2019-12-23 01:46:49.488 DEBUG 4932 --- [main] com.edu.cmn.SemanticUiApplicationTests   : =====================================
+2019-12-23 01:46:49.516  INFO 4932 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:47:26.434  INFO 7396 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Starting SemanticUiApplicationTests on DESKTOP-S1DF2OB with PID 7396 (started by ABC in C:\Users\ABC\git\SemanticUI_Spring\SemanticUI)
+2019-12-23 01:47:26.436 DEBUG 7396 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2019-12-23 01:47:26.437  INFO 7396 --- [main] com.edu.cmn.SemanticUiApplicationTests   : No active profile set, falling back to default profiles: default
+2019-12-23 01:47:27.396  WARN 7396 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.edu]' package. Please check your configuration.
+2019-12-23 01:47:27.869 DEBUG 7396 --- [main] com.zaxxer.hikari.HikariConfig           : Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@5b480cf9
+2019-12-23 01:47:28.710  INFO 7396 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 01:47:29.356  INFO 7396 --- [main] com.edu.cmn.SemanticUiApplicationTests   : Started SemanticUiApplicationTests in 3.298 seconds (JVM running for 4.468)
+2019-12-23 01:47:29.756  INFO 7396 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-23 01:47:29.757  INFO 7396 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-23 01:47:29.786  INFO 7396 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 29 ms
+2019-12-23 01:47:29.883 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:47:29.884 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : 1/2) Controller: post
+2019-12-23 01:47:29.884 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:47:29.884 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:47:29.884 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : 2/2) Controller: post
+2019-12-23 01:47:29.884 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : model : null
+2019-12-23 01:47:29.885 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : vo : BoardVO [postNum=990, userId=null, title=null, pw=null, RegDt=null, FileCode=null, contents=null]
+2019-12-23 01:47:29.885 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:47:29.918 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:47:29.918 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : 1/2) Controller: post
+2019-12-23 01:47:29.919 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:47:29.920 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:47:29.921 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : 2/2) Controller: post
+2019-12-23 01:47:29.921 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : model : null
+2019-12-23 01:47:29.921 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : vo : BoardVO [postNum=990, userId=null, title=null, pw=null, RegDt=null, FileCode=null, contents=null]
+2019-12-23 01:47:29.921 DEBUG 7396 --- [main] com.edu.board.web.BoardCtrl              : ==================================
+2019-12-23 01:47:29.922 DEBUG 7396 --- [main] com.edu.cmn.SemanticUiApplicationTests   : =====================================
+2019-12-23 01:47:29.922 DEBUG 7396 --- [main] com.edu.cmn.SemanticUiApplicationTests   : 
+2019-12-23 01:47:29.922 DEBUG 7396 --- [main] com.edu.cmn.SemanticUiApplicationTests   : =====================================
+2019-12-23 01:47:29.948  INFO 7396 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

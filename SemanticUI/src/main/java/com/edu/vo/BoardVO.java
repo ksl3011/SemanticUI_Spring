@@ -1,32 +1,45 @@
 package com.edu.vo;
 
-public class BoardVO {
-	
-	private int no;
+import com.edu.board.DTO;
+
+public class BoardVO extends DTO {
+
+	private int postNum;
+	private String userId;
 	private String title;
+	private String pw;
+	private String RegDt;
+	private String FileCode;
 	private String contents;
-	private String regDt;
-	private String id;
-	private float star;
 	
 	public BoardVO() {}
 
-	public BoardVO(int no, String title, String contents, String regDt, String id, float star) {
+	public BoardVO(int postNum, String userId, String title, String pw, String regDt, String fileCode,
+			String contents) {
 		super();
-		this.no = no;
+		this.postNum = postNum;
+		this.userId = userId;
 		this.title = title;
+		this.pw = pw;
+		RegDt = regDt;
+		FileCode = fileCode;
 		this.contents = contents;
-		this.regDt = regDt;
-		this.id = id;
-		this.star = star;
 	}
 
-	public int getNo() {
-		return no;
+	public int getPostNum() {
+		return postNum;
 	}
 
-	public void setNo(int no) {
-		this.no = no;
+	public void setPostNum(int postNum) {
+		this.postNum = postNum;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public String getTitle() {
@@ -37,6 +50,30 @@ public class BoardVO {
 		this.title = title;
 	}
 
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+
+	public String getRegDt() {
+		return RegDt;
+	}
+
+	public void setRegDt(String regDt) {
+		RegDt = regDt;
+	}
+
+	public String getFileCode() {
+		return FileCode;
+	}
+
+	public void setFileCode(String fileCode) {
+		FileCode = fileCode;
+	}
+
 	public String getContents() {
 		return contents;
 	}
@@ -45,34 +82,10 @@ public class BoardVO {
 		this.contents = contents;
 	}
 
-	public String getRegDt() {
-		return regDt;
-	}
-
-	public void setRegDt(String regDt) {
-		this.regDt = regDt;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public float getStar() {
-		return star;
-	}
-
-	public void setStar(float star) {
-		this.star = star;
-	}
-
 	@Override
 	public String toString() {
-		return "BoardVO [no=" + no + ", title=" + title + ", contents=" + contents + ", regDt=" + regDt + ", id=" + id
-				+ ", star=" + star + "]";
+		return "BoardVO [postNum=" + postNum + ", userId=" + userId + ", title=" + title + ", pw=" + pw + ", RegDt="
+				+ RegDt + ", FileCode=" + FileCode + ", contents=" + contents + "]";
 	}
-
+	
 }

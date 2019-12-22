@@ -29,9 +29,7 @@
 <link rel="stylesheet" type="text/css" href="${context}/css/components/rating.css">
 <body>
 
-	<button class="mini ui brown button" id="mainfsUpBtn">Size Up</button>
-	<button class="mini ui gray button" id="mainfsDownBtn">Size Down</button>
-	<button class="mini ui gray button" id="reBtn">re</button>
+	<button class="mini ui gray button" id="reBtn">새로고침</button>
 	<div class="ui sizer vertical segment" id="header">
 	  <div class="ui huge header">Semantic UI - Header</div>
 	</div>
@@ -40,31 +38,27 @@
 		<thead>
 			<tr>
 				<th>No</th>
-				<th>Title</th>
-				<th>User</th>
-				<th>Date</th>
-				<th>Star</th>
+				<th>제목</th>
+				<th>아이디</th>
+				<th>날짜</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:choose>
 				<c:when test="${not empty list && list.size() > 0}">
-					<c:forEach var="list" items="${list}" begin="0" end="9">
+					<c:forEach var="list" items="${list}">
 						<tr>
 						    <td class="collapsing">
-						    	${list.no}
+						    	${list.postNum}
 						    </td>
 						    <td>
-						    	<a onclick="javascript:goContents('${list.no}')">${list.title}</a>
+						    	<a onclick="javascript:goContents('${list.postNum}')">${list.title}</a>
 						    </td>
 						    <td class="right aligned collapsing">
-						      ${list.id}
+						      ${list.userId}
 						    </td>
 						    <td class="right aligned collapsing">
 						      ${list.regDt}
-						    </td>
-						    <td class="right collapsing">
-						    	<div class="ui star rating" data-rating="1" data-max-rating="3"></div>
 						    </td>
 					    </tr>	   
 					</c:forEach>
@@ -98,24 +92,9 @@
 <script src="${context}/js/semantic.js"></script>
 <script src="${context}/css/components/rating.js"></script>
 <script type="text/javascript">
-	$('.ui.rating').rating();
 
-	$("#mainfsUpBtn").on('click', function(){
-		var rawsize = $("#header").css("fontSize");
-		var size = parseInt(rawsize)+1;  
-		var px = rawsize.slice(-2);
-		$("#header").css("font-size", size+px);
-	});
-
-	$("#mainfsDownBtn").on('click', function(){
-		var rawsize = $("#header").css("fontSize");
-		var size = parseInt(rawsize)+-1;  
-		var px = rawsize.slice(-2);
-		$("#header").css("font-size", size+px);
-	});
-	
 	$("#reBtn").on('click', function(){
-		location.href="board";
+		location.href="semantic/board/retrieve";
 	});
 	
 	function goContents(number){

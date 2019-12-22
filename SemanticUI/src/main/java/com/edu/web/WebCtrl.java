@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.edu.vo.BoardVO;
+import com.edu.vo.BoardtestVO;
 
 @Controller
 public class WebCtrl {
@@ -20,7 +20,7 @@ public class WebCtrl {
 	
 	@RequestMapping(value = "/board")
 	public String inputData(HttpServletRequest req) {
-		List<BoardVO> list = this.list(1, total);
+		List<BoardtestVO> list = this.list(1, total);
 		req.setAttribute("list", list);
 		req.setAttribute("listSize", total);
 		return webUrl;
@@ -31,12 +31,12 @@ public class WebCtrl {
 		int no = Integer.parseInt(req.getParameter("no"));
 		int nowPage = Integer.parseInt(req.getParameter("nowPage"));
 		
-		List<BoardVO> list = this.list(nowPage, total);
+		List<BoardtestVO> list = this.list(nowPage, total);
 		req.setAttribute("list", list);
 		req.setAttribute("nowPage", nowPage);
 		req.setAttribute("listSize", total);
 		
-		for(BoardVO vo : list) {
+		for(BoardtestVO vo : list) {
 			if(vo.getNo() == no) {
 				req.setAttribute("vo", vo);
 			}
@@ -44,11 +44,11 @@ public class WebCtrl {
 		return webUrl2;
 	}
 	
-	private List<BoardVO> list(int nowPage, int total){
-		List<BoardVO> list = new ArrayList<BoardVO>();
+	private List<BoardtestVO> list(int nowPage, int total){
+		List<BoardtestVO> list = new ArrayList<BoardtestVO>();
 		int start = ((nowPage-1)*10)+1;
 		for(int i=start ; i<total+1 && i<start+11 ; i++) {
-			BoardVO vo = new BoardVO();
+			BoardtestVO vo = new BoardtestVO();
 			vo.setId("아이디"+i);
 			vo.setContents("내용"+i);
 			vo.setNo(i);
@@ -75,7 +75,7 @@ public class WebCtrl {
 			page = 1;
 		}
 		
-		List<BoardVO> list = this.list(page, total);
+		List<BoardtestVO> list = this.list(page, total);
 		req.setAttribute("list", list);
 		req.setAttribute("nowPage", page);
 		req.setAttribute("listSize", total);
