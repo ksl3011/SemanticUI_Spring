@@ -4,6 +4,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,7 +23,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-
 import com.edu.vo.BoardVO;
 
 @WebAppConfiguration
@@ -34,12 +35,14 @@ class SemanticUiApplicationTests {
 
 	private MockMvc mock;
 	
-	@Test
-	void contextLoads() throws Exception {
+	//@Test
+	void save() throws Exception {
 		MockHttpServletRequestBuilder createMessage = 
-				MockMvcRequestBuilders.get("/semantic/post")
-										.param("postNum", "990");
-	
+				MockMvcRequestBuilders.post("/semantic/post")
+										.param("title", "1제목")
+										.param("pw", "1비번")
+										.param("userId", "1아이디")
+										.param("contents", "1내용");
 		
 		ResultActions resultAction = mock.perform(createMessage)
 										.andExpect(status().isOk());
@@ -54,24 +57,24 @@ class SemanticUiApplicationTests {
 		
 	}
 	
-	//@Test
-	public void do_save() throws Exception {
-		
-		
+	@Test
+	void retrieve() throws Exception {
 		MockHttpServletRequestBuilder createMessage = 
-				MockMvcRequestBuilders.get("/semantic/post");
-
+				MockMvcRequestBuilders.get("/semantic/retrieve")
+										.param("pageSize", "4");
 		
 		ResultActions resultAction = mock.perform(createMessage)
-	.andExpect(status().isOk());
-		String result = resultAction.andDo(print())
-										.andReturn()
-										.getResponse()
-										.getContentAsString();
+										.andExpect(status().isOk());
 		
-		LOG.debug("=====================================================");
-		LOG.debug("return = " + result);
-		LOG.debug("=====================================================");
+		MvcResult result = mock.perform(createMessage)
+                .andExpect(status().isOk())
+                .andReturn();
+		
+		List<BoardVO> list = (List<BoardVO>) result.getRequest().getAttribute("postList");
+		LOG.debug("=====================================");
+		LOG.debug("list :" + list);
+		LOG.debug("=====================================");
+		
 	}
 	
 	@BeforeEach

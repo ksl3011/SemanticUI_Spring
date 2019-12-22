@@ -1,3 +1,4 @@
+<%@page import="com.edu.vo.BoardVO"%>
 <%@page import="com.edu.vo.BoardtestVO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.edu.cmn.Common"%>
@@ -10,7 +11,7 @@
 %>
 <%
 	int nowPage = (request.getAttribute("nowPage")==null)?1:(int)request.getAttribute("nowPage");
-	List<BoardtestVO> list = (List<BoardtestVO>) request.getAttribute("list");
+	//List<BoardVO> list = (List<BoardVO>) request.getAttribute("postList");
 	int listSize = (request.getAttribute("listSize")==null)?1:(int)request.getAttribute("listSize");
 %>
 <!DOCTYPE html>
@@ -45,8 +46,8 @@
 		</thead>
 		<tbody>
 			<c:choose>
-				<c:when test="${not empty list && list.size() > 0}">
-					<c:forEach var="list" items="${list}">
+				<c:when test="${not empty postList && postList.size() > 0}">
+					<c:forEach var="list" items="${postList}">
 						<tr>
 						    <td class="collapsing">
 						    	${list.postNum}
@@ -94,7 +95,7 @@
 <script type="text/javascript">
 
 	$("#reBtn").on('click', function(){
-		location.href="semantic/board/retrieve";
+		location.href="retrieve";
 	});
 	
 	function goContents(number){

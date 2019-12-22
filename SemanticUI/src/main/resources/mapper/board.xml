@@ -2,11 +2,40 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.co.ehr.board">
+<mapper namespace="com.edu.board">
 
-  <select id="save" parameterType="BoardVO">
-    SELECT *
-    FROM BOARD
-  </select>
-  
+	<insert id="save" parameterType="BoardVO">
+		INSERT INTO BOARD (
+			TITLE
+			,PW
+			,USER_ID
+			,REG_DT
+			,FILE_CODE
+			,CONTENTS
+		) VALUES (
+			#{title}
+			,#{pw}
+			,#{userId}
+			,now()
+			,#{fileCode}
+			,#{contents}
+		)
+	</insert>
+
+	<select id="retrieve" parameterType="SearchVO" resultType="BoardVO">
+		SELECT A.TITLE as title
+			  ,A.PW as pw
+			  ,A.POST_NUM postNum
+			  ,A.USER_ID as userId
+			  ,A.REG_DT as regDt
+			  ,A.CONTENTS as contents
+			  ,A.FILE_CODE as fileCode
+		FROM(
+			SELECT <![CDATA[ *, @rownum:=@rownum+1 as rownum ]]>
+			FROM BOARD
+			WHERE <![CDATA[ (@rownum:=0)=0 ]]>
+		    )A
+		WHERE <![CDATA[ CEIL(A.rownum%#{pageSize})<=#{pageSize} ]]>
+	</select>
+
 </mapper>

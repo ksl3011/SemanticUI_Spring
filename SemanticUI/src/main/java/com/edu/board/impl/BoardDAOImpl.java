@@ -54,7 +54,7 @@ public class BoardDAOImpl implements BoardDAO {
 		
 		String statement = this.NAMESPACE + ".retrieve";
 		
-		List<BoardVO> list = sqlSessionTemplate.selectOne(statement, invo);
+		List<BoardVO> list = sqlSessionTemplate.selectList(statement, invo);
 		
 		LOG.debug("==================================");
 		LOG.debug("2/2) DAO: retrieve");

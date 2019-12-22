@@ -8,12 +8,12 @@ public class SearchVO extends DTO {
 	private String searchWord_b;
 	private String searchWord_c;
 	private int pageNum;
-	private String pageSize;
+	private int pageSize;
 	private String searchDiv;
 	
 	public SearchVO() {}
 
-	public SearchVO(String searchWord_a, String searchWord_b, String searchWord_c, int pageNum, String pageSize,
+	public SearchVO(String searchWord_a, String searchWord_b, String searchWord_c, int pageNum, int pageSize,
 			String searchDiv) {
 		super();
 		this.searchWord_a = searchWord_a;
@@ -56,11 +56,11 @@ public class SearchVO extends DTO {
 		this.pageNum = pageNum;
 	}
 
-	public String getPageSize() {
+	public int getPageSize() {
 		return pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
 

@@ -17,7 +17,7 @@
 	  <tbody>
 		<tr><td>no : ${vo.no}</td></tr>
 		<tr><td>title : ${vo.title}</td></tr>
-		<tr><td>id : ${vo.id}</td></tr>
+		<tr><td>id : ${vo.userId}</td></tr>
 		<tr><td>regDt : ${vo.regDt}</td></tr>
 		<tr><td>contents : ${vo.contents}</td></tr>
 	  </tbody>
