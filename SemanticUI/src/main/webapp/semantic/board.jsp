@@ -8,11 +8,11 @@
 <c:set var="context" value="${pageContext.request.contextPath}"/>
 <%
 	String context = request.getContextPath();
-%>
-<%
+
 	int nowPage = (request.getAttribute("nowPage")==null)?1:(int)request.getAttribute("nowPage");
-	//List<BoardVO> list = (List<BoardVO>) request.getAttribute("postList");
 	int listSize = (request.getAttribute("listSize")==null)?1:(int)request.getAttribute("listSize");
+	int pageSize = (request.getAttribute("pageSize")==null)?1:(int)request.getAttribute("pageSize");
+	String searchWord = (request.getAttribute("searchWord")==null)?"":(String)request.getAttribute("searchWord");
 %>
 <!DOCTYPE html>
 <html>
@@ -24,21 +24,31 @@
 		background-color: lightcoral !important;
 		color: white !important;
 	}
+	.container{
+		margin: 10px;
+	}
+	.prompt{
+		padding: 5px !important;
+	}
 </style>
 </head>
 <link rel="stylesheet" type="text/css" href="<%=context%>/css/semantic.css">
 <link rel="stylesheet" type="text/css" href="${context}/css/components/rating.css">
 <body>
 
-	<button class="mini ui gray button" id="reBtn">새로고침</button>
+	<div class="container">
+		<button class="mini ui gray button" id="reBtn">목록</button>
 	<div class="ui sizer vertical segment" id="header">
 	  <div class="ui huge header">Semantic UI - Header</div>
 	</div>
-
-	<table class="ui celled padded table">
+	
+	<div class="ui search">
+		<input class="prompt" type="text" placeholder="search">
+	</div>
+	<table class="ui celled padded unstackable selectable table">
 		<thead>
 			<tr>
-				<th>No</th>
+				<th>번호</th>
 				<th>제목</th>
 				<th>아이디</th>
 				<th>날짜</th>
@@ -56,10 +66,10 @@
 						    	<a onclick="javascript:goContents('${list.postNum}')">${list.title}</a>
 						    </td>
 						    <td class="right aligned collapsing">
-						      ${list.userId}
+						    	${list.userId}
 						    </td>
 						    <td class="right aligned collapsing">
-						      ${list.regDt}
+								${list.regDt}
 						    </td>
 					    </tr>	   
 					</c:forEach>
@@ -74,16 +84,21 @@
 		<tfoot>
 			<tr>
 				<th colspan="5">
-		      		<%=Common.pagination(listSize, 10, nowPage, "goPage") %>
+		      		<%=Common.pagination(listSize, pageSize, nowPage, "goPage") %>
 				</th>
 			</tr>
 		</tfoot>
 	</table>	
-
+	
+	<button class="mini ui gray button" id="postBtn">글쓰기</button>
+	
 	<form action="contents" method="get" id="boardFrm">
-		<input type="hidden" name="no" value="0" id="no">
-		<input type="hidden" name="nowPage" value="<%=nowPage%>">		
+		<input type="hidden" name="postNum" value="0" id="postNum">
+		<input type="hidden" name="pageNum" value="<%=nowPage%>">
+		<input type="hidden" name="pageSize" value="<%=pageSize%>">
+		<input type="hidden" name="searchWord_a" value="<%=searchWord%>">	
 	</form>
+	</div>
 
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -98,18 +113,30 @@
 		location.href="retrieve";
 	});
 	
-	function goContents(number){
+	$("#postBtn").on('click', function(){
+		location.href="post.jsp";
+	});
+	
+	$(".prompt").keydown(function(key) {
+		if (key.keyCode == 13) {
+			$("input[name=searchWord_a]").val($(this).val());
+			goPage(1);
+		}
+	});
+
+	function goContents(postNum){
 		var $f = $("#boardFrm");
-		$("#no").val(number);
+		$("#postNum").val(postNum);
 		$($f).submit();
 	}
 	
-	function goPage(number){
+	function goPage(goPageNum){
 		var $f = $("#boardFrm");
-		$f.attr("action", "goPage");
-		$("#no").val(number);
+		$f.attr("action", "retrieve");
+		$("input[name=pageNum]").val(goPageNum);
 		$($f).submit();
 	}
+
 </script>
 </body>
 </html>

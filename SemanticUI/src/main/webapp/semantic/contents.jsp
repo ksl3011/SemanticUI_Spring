@@ -15,14 +15,47 @@
 	
 	<table class="ui celled padded table">
 	  <tbody>
-		<tr><td>no : ${vo.no}</td></tr>
-		<tr><td>title : ${vo.title}</td></tr>
-		<tr><td>id : ${vo.userId}</td></tr>
-		<tr><td>regDt : ${vo.regDt}</td></tr>
-		<tr><td>contents : ${vo.contents}</td></tr>
+		<tr><td>no : ${selectPost.postNum}</td></tr>
+		<tr><td>title : ${selectPost.title}</td></tr>
+		<tr><td>id : ${selectPost.userId}</td></tr>
+		<tr><td>regDt : ${selectPost.regDt}</td></tr>
+		<tr><td>contents : ${selectPost.contents}</td></tr>
 	  </tbody>
 	</table>
 	
+	<table class="ui celled padded unstackable table">
+		<tbody>
+			<tr>
+				<td colspan="3">${selectPost.title}</td>
+			</tr>
+			<tr>
+				<td>${selectPost.postNum}</td>
+				<td>${selectPost.regDt}</td>
+				<td>${selectPost.userId}</td>
+			</tr>
+			<tr>
+				<td colspan="3">${selectPost.contents}</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table class="ui red table">
+	<thead>
+	    <tr>
+	    	<th>${selectPost.title} ${selectPost.regDt} ${selectPost.userId}</th>
+		</tr>
+	</thead>
+	<tbody>
+	    <tr>
+			<td>${selectPost.contents}</td>
+	    </tr>
+	</tbody>
+</table>
+	<form action="delete" method="post">
+		<input type="hidden" name="pw" value="${selectPost.pw}">
+		<input type="hidden" name="postNum" value="${selectPost.postNum}">
+		<input type="submit" value="삭제">
+	</form>
 	<jsp:include page="board.jsp"/>
 
 <script

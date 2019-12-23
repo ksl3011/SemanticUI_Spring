@@ -66,7 +66,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public DTO selectOne(DTO dto) {
-		SearchVO invo = (SearchVO) dto;
+		BoardVO invo = (BoardVO) dto;
 		
 		LOG.debug("==================================");
 		LOG.debug("1/2) DAO: selectOne");

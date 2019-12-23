@@ -4,6 +4,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.edu.board">
 
+	<sql id="search">
+		<where>
+			<choose>
+				<when test='searchWord_a != null and searchWord_a != ""'>
+					TITLE LIKE CONCAT('%', #{searchWord_a}, '%')
+					AND <![CDATA[ (@rownum:=0)=0 ]]>
+				</when>
+				<otherwise>
+					<![CDATA[ (@rownum:=0)=0 ]]>
+				</otherwise>
+			</choose>				
+		</where>
+	</sql>
+
 	<insert id="save" parameterType="BoardVO">
 		INSERT INTO BOARD (
 			TITLE
@@ -22,20 +36,40 @@
 		)
 	</insert>
 
-	<select id="retrieve" parameterType="SearchVO" resultType="BoardVO">
-		SELECT A.TITLE as title
-			  ,A.PW as pw
-			  ,A.POST_NUM postNum
-			  ,A.USER_ID as userId
-			  ,A.REG_DT as regDt
-			  ,A.CONTENTS as contents
-			  ,A.FILE_CODE as fileCode
+	<select id="retrieve" parameterType="SearchVO" resultType="BoardVO">	
+		SELECT T.TITLE AS title
+			  ,T.POST_NUM AS postNum
+			  ,T.USER_ID AS userId
+			  ,T.REG_DT AS regDt
+			  ,T.CONTENTS AS contents
+			  ,T.FILE_CODE AS fileCode
+              ,T.TOTAL AS total
 		FROM(
-			SELECT <![CDATA[ *, @rownum:=@rownum+1 as rownum ]]>
-			FROM BOARD
-			WHERE <![CDATA[ (@rownum:=0)=0 ]]>
-		    )A
-		WHERE <![CDATA[ CEIL(A.rownum%#{pageSize})<=#{pageSize} ]]>
+			SELECT <![CDATA[ A.*, B.*, @rownum:=@rownum+1 AS ROWNUM ]]>
+			FROM BOARD A, (SELECT COUNT(*) AS TOTAL FROM BOARD)B
+			<include refid="search"/>
+		    )T
+		WHERE <![CDATA[ CEIL(T.ROWNUM/#{pageSize})=#{pageNum} ]]>
+		ORDER BY postNum DESC
 	</select>
 
+	<select id="selectOne" parameterType="BoardVO" resultType="BoardVO">	
+		SELECT TITLE AS title
+			  ,PW AS pw
+			  ,POST_NUM AS postNum
+			  ,USER_ID AS userId
+			  ,REG_DT AS regDt
+			  ,CONTENTS AS contents
+			  ,FILE_CODE AS fileCode
+		FROM BOARD
+		WHERE POST_NUM = #{postNum}
+	</select>
+	
+	<select id="delete" parameterType="BoardVO" resultType="BoardVO">
+		DELETE FROM BOARD
+		WHERE #{pw} IN (
+			SELECT PW FROM (SELECT b.PW FROM BOARD b WHERE b.POST_NUM = #{postNum})T
+		)
+		AND POST_NUM = #{postNum}
+	</select>
 </mapper>
