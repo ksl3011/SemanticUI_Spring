@@ -27,7 +27,7 @@ import com.edu.vo.BoardVO;
 
 @WebAppConfiguration
 @SpringBootTest
-class SemanticUiApplicationTests {
+class test {
 	private Logger LOG = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired

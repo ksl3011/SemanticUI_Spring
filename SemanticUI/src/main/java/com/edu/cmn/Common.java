@@ -1,5 +1,11 @@
 package com.edu.cmn;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.InputStream;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Common {
 	
 	public static String pagination(int listSize, int oneIdxView, int nowPage, String scriptNm) {
@@ -43,5 +49,24 @@ public class Common {
 		sb.append("</div>");
 		
 		return sb.toString();
+	}
+	
+	public static void filetest() {
+		//String path = "/resources/download"; // c://resources/download
+		
+		Calendar c = Calendar.getInstance();
+		StringBuilder path = new StringBuilder("download/" + c.get(Calendar.YEAR) + "/" + (c.get(Calendar.MONTH)+1) +"/" + c.get(Calendar.DATE));
+
+		File file = new File(path.toString());
+		file.mkdirs();
+	}
+	
+	
+	public static void main(String args[]) {
+		//filetest();
+		
+		File f= new File("C:\\Users\\ABC\\Desktop\\test.txt");
+		System.out.println(f.exists());
+		
 	}
 }
