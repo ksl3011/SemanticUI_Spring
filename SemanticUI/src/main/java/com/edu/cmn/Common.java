@@ -1,7 +1,14 @@
 package com.edu.cmn;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Date;
@@ -51,22 +58,65 @@ public class Common {
 		return sb.toString();
 	}
 	
-	public static void filetest() {
+	public static String filetest() {
 		//String path = "/resources/download"; // c://resources/download
 		
 		Calendar c = Calendar.getInstance();
-		StringBuilder path = new StringBuilder("download/" + c.get(Calendar.YEAR) + "/" + (c.get(Calendar.MONTH)+1) +"/" + c.get(Calendar.DATE));
+		StringBuilder path = new StringBuilder("/download/" + c.get(Calendar.YEAR) + "/" + (c.get(Calendar.MONTH)+1) +"/" + c.get(Calendar.DATE));
 
 		File file = new File(path.toString());
-		file.mkdirs();
-	}
-	
-	
-	public static void main(String args[]) {
-		//filetest();
+		System.out.println("exist : "  + file.exists());
+		System.out.println(file.getAbsolutePath());
 		
-		File f= new File("C:\\Users\\ABC\\Desktop\\test.txt");
-		System.out.println(f.exists());
+		System.out.println(file.mkdirs());
 		
+		return file.getPath();
 	}
+
+//	public static void main(String args[]) {
+//		//filetest();
+//		
+//		File f= new File("C:\\Users\\ABC\\Desktop\\2020_recruit2.gif");
+//		System.out.println(f.exists());
+//		
+//		byte[] a = new byte[1024*1024*100];
+//		
+//		FileInputStream fis;
+//		try {
+//			fis = new FileInputStream(f);
+//		
+//		BufferedInputStream bifs = new BufferedInputStream(fis);
+//		int b = bifs.read(a);
+//		System.out.println(b);
+//		for(byte i : a) {
+//			//System.out.printf("%c",i);
+//		}
+//		
+//		Calendar c = Calendar.getInstance();
+//		StringBuilder path = new StringBuilder("download/" + c.get(Calendar.YEAR) + "/" + (c.get(Calendar.MONTH)+1) +"/" + c.get(Calendar.DATE));
+//		File ff =new File(path.toString());
+//		ff.mkdirs();
+//		
+//		path.append("/2020_recruit2.gif");
+//		File f2 = new File(path.toString());
+//		//FileWriter fw = new FileWriter(path.toString(), true);
+//		FileOutputStream fos = new FileOutputStream(f2);
+//		BufferedOutputStream bos = new BufferedOutputStream(fos);
+//		//BufferedWriter bfw = new BufferedWriter(fw);
+//		//fos.write(a);
+////		for(byte i : a) {
+////			System.out.printf("%c",i);
+////			bfw.write(i);
+////			
+////		}bfw.flush();
+//		
+//		fos.write(a);
+//		fos.flush();
+//		
+//		} catch (IOException e ) {
+//			e.printStackTrace();
+//			System.out.println(e.getStackTrace());
+//		}
+//		
+//	}
 }

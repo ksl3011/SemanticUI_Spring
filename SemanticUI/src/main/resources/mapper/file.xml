@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.edu.board">
+<mapper namespace="com.edu.file">
 
 	<sql id="search">
 		<where>
@@ -19,58 +19,35 @@
 	</sql>
 
 	<insert id="save" parameterType="BoardVO">
-		INSERT INTO BOARD (
-			TITLE
-			,PW
-			,USER_ID
-			,REG_DT
-			,FILE_CODE
-			,CONTENTS
+		INSERT INTO FILESTORE (
+			POST_NUM
+			,PATH
+			,O_NAME
 		) VALUES (
-			#{title}
-			,#{pw}
-			,#{userId}
-			,now()
-			,#{fileCode}
-			,#{contents}
+			#{postNum}
+			,#{path}
+			,#{oName}
 		)
 	</insert>
 
 	<select id="retrieve" parameterType="SearchVO" resultType="BoardVO">	
-		SELECT T.TITLE AS title
-			  ,T.POST_NUM AS postNum
-			  ,T.USER_ID AS userId
-			  ,T.REG_DT AS regDt
-			  ,T.CONTENTS AS contents
-			  ,T.FILE_CODE AS fileCode
-              ,T.TOTAL AS total
-		FROM(
-			SELECT <![CDATA[ A.*, B.*, @rownum:=@rownum+1 AS ROWNUM ]]>
-			FROM BOARD A, (SELECT COUNT(*) AS TOTAL FROM BOARD)B
-			<include refid="search"/>
-			ORDER BY A.POST_NUM DESC
-		    )T
-		WHERE <![CDATA[ CEIL(T.ROWNUM/#{pageSize})=#{pageNum} ]]>
+		
 		
 	</select>
 
 	<select id="selectOne" parameterType="BoardVO" resultType="BoardVO">	
-		SELECT TITLE AS title
-			  ,PW AS pw
-			  ,POST_NUM AS postNum
-			  ,USER_ID AS userId
-			  ,REG_DT AS regDt
-			  ,CONTENTS AS contents
-			  ,FILE_CODE AS fileCode
-		FROM BOARD
-		WHERE POST_NUM = #{postNum}
+		
 	</select>
 	
 	<select id="delete" parameterType="BoardVO" resultType="BoardVO">
-		DELETE FROM BOARD
+		DELETE FROM FILESTORE
 		WHERE #{pw} IN (
 			SELECT PW FROM (SELECT b.PW FROM BOARD b WHERE b.POST_NUM = #{postNum})T
 		)
 		AND POST_NUM = #{postNum}
 	</select>
+	
+	<insert id="filesave" parameterType="FileVO">
+		
+	</insert>
 </mapper>
