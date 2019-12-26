@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.edu.board.DTO;
 import com.edu.board.FileDAO;
+import com.edu.vo.BoardVO;
 import com.edu.vo.FileVO;
 import com.edu.vo.SearchVO;
 
@@ -45,7 +46,7 @@ public class FileDAOImpl implements FileDAO {
 
 	@Override
 	public List<?> retrieve(DTO dto) {
-		SearchVO invo = (SearchVO) dto;
+		BoardVO invo = (BoardVO) dto;
 		
 		LOG.debug("==================================");
 		LOG.debug("1/2) DAO: File retrieve");

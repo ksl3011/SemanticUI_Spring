@@ -18,8 +18,11 @@
 		)
 	</insert>
 
-	<select id="retrieve" parameterType="SearchVO" resultType="FileVO">	
-		SELECT *
+	<select id="retrieve" parameterType="BoardVO" resultType="FileVO">	
+		SELECT POST_NUM AS postNum 
+			,O_NAME AS oName
+			,R_NAME AS RName
+			,REG_DT AS regDt
 		FROM FILESTORE
 		WHERE POST_NUM = #{postNum}
 		ORDER BY REG_DT

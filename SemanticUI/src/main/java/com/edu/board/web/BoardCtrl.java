@@ -156,13 +156,16 @@ public class BoardCtrl {
 		model = retrieveModel(model, svo);
 		
 		BoardVO outvo = (BoardVO) c.selectOne(bvo);
+		List<FileVO> fileList = (List<FileVO>) fc.retrieve(bvo);
 		
 		LOG.debug("==================================");
 		LOG.debug("2/2) Controller: selectOne");
 		LOG.debug("vo : " + bvo);
+		LOG.debug("fileList" + fileList);
 		LOG.debug("==================================");
 		
 		model.addAttribute("selectPost", outvo);
+		model.addAttribute("fileList", fileList);
 		
 		return boardContentsUrl;
 	}

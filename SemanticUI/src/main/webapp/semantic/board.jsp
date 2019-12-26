@@ -65,7 +65,7 @@
 						    <td>
 						    	<a onclick="javascript:goContents('${list.postNum}')">${list.title}
 						    	<c:if test="${not empty list.fileCode && list.fileCode == '1'}">
-						    		  !파일
+						    		<i class="file icon"></i>
 						    	</c:if>
 						    	</a>
 						    </td>
