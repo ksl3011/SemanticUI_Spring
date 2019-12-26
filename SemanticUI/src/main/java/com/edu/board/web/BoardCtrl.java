@@ -22,8 +22,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.edu.board.BoardService;
+import com.edu.board.FileService;
 import com.edu.cmn.Common;
 import com.edu.vo.BoardVO;
+import com.edu.vo.FileVO;
 import com.edu.vo.SearchVO;
 
 @Controller
@@ -35,7 +37,9 @@ public class BoardCtrl {
 	
 	@Autowired
 	private BoardService c;
-	
+
+	@Autowired
+	private FileService fc;
 	
 	@RequestMapping(value = "semantic/delete", method = RequestMethod.POST)
 	public String delete(Model model, BoardVO vo) {
@@ -70,38 +74,56 @@ public class BoardCtrl {
 		LOG.debug("1/2) Controller: post");
 		LOG.debug("vo : " + vo);
 		LOG.debug("==================================");
-		
-		MultipartFile[] fileOb = {files0,files1,files2,files3,files4};
-		for(MultipartFile files : fileOb) {
-			if(files != null && !files.getOriginalFilename().equals("")) {
-				String path = Common.filetest();
-				File f = new File(path + File.separator + files.getOriginalFilename());
-				FileOutputStream fos = new FileOutputStream(f);
-				BufferedOutputStream bos = new BufferedOutputStream(fos);
-
-				LOG.debug(f.getPath() + " : " + files.getSize());
-				
-				try {
-					if(files.getSize() > 1024*1024*10) continue;
-					
-					byte[] b = files.getBytes();
-					
-					bos.write(b);
-					bos.flush();
-				} catch (IOException e) {
-					e.printStackTrace();
-				} finally {
-					try {bos.close();fos.close();} catch (IOException e) {}
-				}
-			}
-		}
-		
 		int flag = 0;
 		
 		if(vo.getTitle().equals("") || vo.getTitle() == null) {
 			LOG.debug("null title");
 		}else {
+			vo.setFileCode("1");
 			flag = c.save(vo);
+			
+			MultipartFile[] fileOb = {files0,files1,files2,files3,files4};
+			FileVO fvo;
+			for(MultipartFile files : fileOb) {//중복파일이름처리+fileVO설정->내용다운로드->close
+				if(files != null && !files.getOriginalFilename().equals("")) {
+					String path = Common.createDownloadFolder();
+					String oName = files.getOriginalFilename();
+					String ext = oName.substring(oName.lastIndexOf("."), oName.length());
+					
+					fvo = new FileVO();
+					fvo.setoName(oName);
+					fvo.setPostNum(flag);
+					
+					File f = new File(path + File.separator + oName);
+					int cnt = 1;
+					String rName = oName;//서버에 저장될 파일 이름
+					while(f.exists()) {
+						rName = rName.substring(0, rName.lastIndexOf(".")) + (cnt++) + ext;
+						f = new File(path + File.separator + rName);
+					}
+					fvo.setrName(rName);
+					
+					FileOutputStream fos = new FileOutputStream(f);
+					BufferedOutputStream bos = new BufferedOutputStream(fos);
+					LOG.debug(f.getPath() + " : " + files.getSize());
+					
+					try {
+						if(files.getSize() > 1024*1024*10) continue;
+						
+						byte[] b = files.getBytes();
+			
+						bos.write(b);
+						bos.flush();
+						fc.save(fvo);
+					} catch (IOException e) {
+						e.printStackTrace();
+					} finally {
+						try {bos.close();fos.close();} catch (IOException e) {}
+					}
+				}
+			}
+			
+			
 		}
 		
 		model = retrieveModel(model, new SearchVO());

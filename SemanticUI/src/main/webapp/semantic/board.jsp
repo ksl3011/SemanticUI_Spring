@@ -63,7 +63,11 @@
 						    	${list.postNum}
 						    </td>
 						    <td>
-						    	<a onclick="javascript:goContents('${list.postNum}')">${list.title}</a>
+						    	<a onclick="javascript:goContents('${list.postNum}')">${list.title}
+						    	<c:if test="${not empty list.fileCode && list.fileCode == '1'}">
+						    		  !파일
+						    	</c:if>
+						    	</a>
 						    </td>
 						    <td class="right aligned collapsing">
 						    	${list.userId}

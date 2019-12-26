@@ -34,24 +34,26 @@
 			,#{fileCode}
 			,#{contents}
 		)
+		<selectKey resultType="int" keyProperty="postNum" order="AFTER">
+        	SELECT LAST_INSERT_ID()
+    	</selectKey> 
 	</insert>
 
 	<select id="retrieve" parameterType="SearchVO" resultType="BoardVO">	
-		SELECT T.TITLE AS title
+			SELECT T.TITLE AS title
 			  ,T.POST_NUM AS postNum
 			  ,T.USER_ID AS userId
 			  ,T.REG_DT AS regDt
 			  ,T.CONTENTS AS contents
 			  ,T.FILE_CODE AS fileCode
               ,T.TOTAL AS total
-		FROM(
-			SELECT <![CDATA[ A.*, B.*, @rownum:=@rownum+1 AS ROWNUM ]]>
-			FROM BOARD A, (SELECT COUNT(*) AS TOTAL FROM BOARD)B
-			<include refid="search"/>
-			ORDER BY A.POST_NUM DESC
-		    )T
-		WHERE <![CDATA[ CEIL(T.ROWNUM/#{pageSize})=#{pageNum} ]]>
-		
+			FROM(
+				SELECT <![CDATA[ A.*, B.*, @rownum:=@rownum+1 AS ROWNUM ]]>
+				FROM BOARD A, (SELECT COUNT(*) AS TOTAL FROM BOARD)B
+				<include refid="search"/>
+				ORDER BY A.POST_NUM DESC
+			    )T
+			WHERE <![CDATA[ CEIL(T.ROWNUM/#{pageSize})=#{pageNum} ]]>
 	</select>
 
 	<select id="selectOne" parameterType="BoardVO" resultType="BoardVO">	

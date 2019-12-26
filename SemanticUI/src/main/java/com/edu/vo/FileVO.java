@@ -4,23 +4,27 @@ import com.edu.board.DTO;
 
 public class FileVO extends DTO {
 	
-	private String path;
+	private String regDt;
 	private int postNum;
+	private String oName;
+	private String rName;
 	
 	public FileVO() {}
 
-	public FileVO(String path, int postNum) {
+	public FileVO(String regDt, int postNum, String oName, String rName) {
 		super();
-		this.path = path;
+		this.regDt = regDt;
 		this.postNum = postNum;
+		this.oName = oName;
+		this.rName = rName;
 	}
 
-	public String getPath() {
-		return path;
+	public String getRegDt() {
+		return regDt;
 	}
 
-	public void setPath(String path) {
-		this.path = path;
+	public void setRegDt(String regDt) {
+		this.regDt = regDt;
 	}
 
 	public int getPostNum() {
@@ -31,9 +35,25 @@ public class FileVO extends DTO {
 		this.postNum = postNum;
 	}
 
+	public String getoName() {
+		return oName;
+	}
+
+	public void setoName(String oName) {
+		this.oName = oName;
+	}
+
+	public String getrName() {
+		return rName;
+	}
+
+	public void setrName(String rName) {
+		this.rName = rName;
+	}
+
 	@Override
 	public String toString() {
-		return "FileVO [path=" + path + ", postNum=" + postNum + "]";
+		return "FileVO [regDt=" + regDt + ", postNum=" + postNum + ", oName=" + oName + ", rName=" + rName + "]";
 	}
-	
+
 }

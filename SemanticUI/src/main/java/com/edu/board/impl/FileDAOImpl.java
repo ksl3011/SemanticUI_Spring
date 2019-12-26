@@ -6,13 +6,15 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import com.edu.board.BoardDAO;
 import com.edu.board.DTO;
+import com.edu.board.FileDAO;
 import com.edu.vo.FileVO;
 import com.edu.vo.SearchVO;
 
-public class FileDAOImpl implements BoardDAO {	
+@Repository
+public class FileDAOImpl implements FileDAO {	
 	private Logger LOG = LoggerFactory.getLogger(this.getClass());
 	
 	private String NAMESPACE = "com.edu.file";

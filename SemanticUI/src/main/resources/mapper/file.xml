@@ -4,50 +4,37 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.edu.file">
 
-	<sql id="search">
-		<where>
-			<choose>
-				<when test='searchWord_a != null and searchWord_a != ""'>
-					TITLE LIKE CONCAT('%', #{searchWord_a}, '%')
-					AND <![CDATA[ (@rownum:=0)=0 ]]>
-				</when>
-				<otherwise>
-					<![CDATA[ (@rownum:=0)=0 ]]>
-				</otherwise>
-			</choose>				
-		</where>
-	</sql>
-
-	<insert id="save" parameterType="BoardVO">
+	<insert id="save" parameterType="FileVO">
 		INSERT INTO FILESTORE (
 			POST_NUM
-			,PATH
 			,O_NAME
+			,R_NAME
+			,REG_DT
 		) VALUES (
 			#{postNum}
-			,#{path}
 			,#{oName}
+			,#{rName}
+			,now()
 		)
 	</insert>
 
-	<select id="retrieve" parameterType="SearchVO" resultType="BoardVO">	
-		
-		
+	<select id="retrieve" parameterType="SearchVO" resultType="FileVO">	
+		SELECT *
+		FROM FILESTORE
+		WHERE POST_NUM = #{postNum}
+		ORDER BY REG_DT
 	</select>
 
-	<select id="selectOne" parameterType="BoardVO" resultType="BoardVO">	
-		
+	<select id="selectOne" parameterType="FileVO" resultType="FileVO">	
+		SELECT PATH
+		FROM FILESTORE
+		WHERE POST_NUM = #{postNum}
+		AND R_Name = #{rName}
 	</select>
 	
-	<select id="delete" parameterType="BoardVO" resultType="BoardVO">
+	<select id="delete" parameterType="FileVO" resultType="FileVO">
 		DELETE FROM FILESTORE
-		WHERE #{pw} IN (
-			SELECT PW FROM (SELECT b.PW FROM BOARD b WHERE b.POST_NUM = #{postNum})T
-		)
 		AND POST_NUM = #{postNum}
 	</select>
-	
-	<insert id="filesave" parameterType="FileVO">
-		
-	</insert>
+
 </mapper>

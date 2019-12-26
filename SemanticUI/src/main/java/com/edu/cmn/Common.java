@@ -58,7 +58,7 @@ public class Common {
 		return sb.toString();
 	}
 	
-	public static String filetest() {
+	public static String createDownloadFolder() {
 		//String path = "/resources/download"; // c://resources/download
 		
 		Calendar c = Calendar.getInstance();
@@ -72,7 +72,15 @@ public class Common {
 		
 		return file.getPath();
 	}
-
+	public static void main(String args[]) {
+		String a = "asd.txt";
+		int s = a.lastIndexOf(".");
+		String q = a.substring(0, 3);
+		String qq = a.substring(3, a.length());
+		
+		System.out.println(q);
+		System.out.println(qq);
+	}
 //	public static void main(String args[]) {
 //		//filetest();
 //		

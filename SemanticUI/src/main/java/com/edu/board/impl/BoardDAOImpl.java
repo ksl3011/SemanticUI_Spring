@@ -38,9 +38,10 @@ public class BoardDAOImpl implements BoardDAO {
 		LOG.debug("==================================");
 		LOG.debug("2/2) DAO: save");
 		LOG.debug("2/2) flag : " + flag);
+		LOG.debug("2/2) postNum : " + vo.getPostNum());
 		LOG.debug("==================================");
 		
-		return flag;
+		return vo.getPostNum();
 	}
 
 	@Override
