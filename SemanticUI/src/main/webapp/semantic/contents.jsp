@@ -48,6 +48,8 @@
 		<thead>
 		    <tr>
 		    	<th>${selectPost.title} ${selectPost.regDt} ${selectPost.userId}</th>
+		    	<th hidden="hidden"></th>
+		    	<th hidden="hidden"></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -56,11 +58,21 @@
 		    </tr>
 		    <c:if test="${not empty fileList && fileList.size() > 0}">
 	    		<c:forEach var="file" items="${fileList}">
-	    			<tr><td>${file.oName}<button type="button" name="downloadBtn">Download</button></td></tr>
+	    			<tr>
+	    				<td>${file.oName}<button type="button" name="downloadBtn">Download</button></td>
+	    				<td hidden="hidden">${file.rName}</td>
+	    				<td hidden="hidden">${file.size}</td>
+	    			</tr>
 	    		</c:forEach>
 	    	</c:if>
 		</tbody>
 	</table>
+
+	<form action="download" method="post">
+		<input type="hidden" name="postNum" value="">
+		<input type="hidden" name="rName" value="">
+		<input type="hidden" name="size" value="">
+	</form>
 
 	<form action="delete" method="post">
 		<input type="hidden" name="pw" value="${selectPost.pw}">
@@ -77,10 +89,21 @@
 <script src="${context}/js/semantic.js"></script>
 <script src="${context}/css/components/rating.js"></script>
 <script type="text/javascript">
+
 	$("button[name=downloadBtn]").on("click", function(){
-		var $p = $(this).parent();
-		alert($p);
+		var $p = $(this).parent().parent()[0];
+		var $f = $("form[action='download']")[0];
+		var rName = $p.cells[1].textContent;
+		var postNum = ${selectPost.postNum};
+		var size = $p.cells[2].textContent;
+		
+		$f.size.value = size;
+		$f.postNum.value = parseInt(postNum);
+		$f.rName.value = rName;
+		$f.submit();
+		
 	});
+	
 </script>
 </body>
 </html>

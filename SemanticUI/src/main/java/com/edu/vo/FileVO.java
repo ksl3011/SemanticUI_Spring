@@ -8,15 +8,17 @@ public class FileVO extends DTO {
 	private int postNum;
 	private String oName;
 	private String rName;
+	private long size;
 	
 	public FileVO() {}
 
-	public FileVO(String regDt, int postNum, String oName, String rName) {
+	public FileVO(String regDt, int postNum, String oName, String rName, long size) {
 		super();
 		this.regDt = regDt;
 		this.postNum = postNum;
 		this.oName = oName;
 		this.rName = rName;
+		this.size = size;
 	}
 
 	public String getRegDt() {
@@ -51,9 +53,18 @@ public class FileVO extends DTO {
 		this.rName = rName;
 	}
 
+	public long getSize() {
+		return size;
+	}
+
+	public void setSize(long size) {
+		this.size = size;
+	}
+
 	@Override
 	public String toString() {
-		return "FileVO [regDt=" + regDt + ", postNum=" + postNum + ", oName=" + oName + ", rName=" + rName + "]";
+		return "FileVO [regDt=" + regDt + ", postNum=" + postNum + ", oName=" + oName + ", rName=" + rName + ", size="
+				+ size + "]";
 	}
 
 }

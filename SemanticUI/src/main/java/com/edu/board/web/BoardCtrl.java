@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 
 import com.edu.board.BoardService;
 import com.edu.board.FileService;
@@ -41,6 +43,9 @@ public class BoardCtrl {
 	@Autowired
 	private FileService fc;
 	
+	@Autowired
+	private View downloadView;
+	
 	@RequestMapping(value = "semantic/delete", method = RequestMethod.POST)
 	public String delete(Model model, BoardVO vo) {
 		LOG.debug("==================================");
@@ -54,6 +59,7 @@ public class BoardCtrl {
 			LOG.debug("null PW");
 		}else {
 			flag = c.delete(vo);
+			flag += fc.delete(vo);
 		}
 		
 		model = retrieveModel(model, new SearchVO());
@@ -86,20 +92,22 @@ public class BoardCtrl {
 			FileVO fvo;
 			for(MultipartFile files : fileOb) {//중복파일이름처리+fileVO설정->내용다운로드->close
 				if(files != null && !files.getOriginalFilename().equals("")) {
-					String path = Common.createDownloadFolder();
+					String path = Common.downloadDir();
 					String oName = files.getOriginalFilename();
 					String ext = oName.substring(oName.lastIndexOf("."), oName.length());
+					long size = files.getSize();
 					
 					fvo = new FileVO();
 					fvo.setoName(oName);
 					fvo.setPostNum(flag);
+					fvo.setSize(size);
 					
 					File f = new File(path + File.separator + oName);
 					int cnt = 1;
 					String rName = oName;//서버에 저장될 파일 이름
 					while(f.exists()) {
-						rName = rName.substring(0, rName.lastIndexOf(".")) + (cnt++) + ext;
-						f = new File(path + File.separator + rName);
+						String reName = rName.substring(0, rName.lastIndexOf(".")) + (cnt++) + ext;
+						f = new File(path + File.separator + reName);
 					}
 					fvo.setrName(rName);
 					
@@ -197,5 +205,17 @@ public class BoardCtrl {
 		model.addAttribute("pageSize", vo.getPageSize());	//보여질 페이지 개수
 		
 		return model;
+	}
+	
+	@RequestMapping(value = "semantic/download", method = RequestMethod.POST)
+	public ModelAndView downloadFile(ModelAndView mv, FileVO vo) {
+		LOG.debug("==================================");
+		LOG.debug("1/2) Controller: downloadFile");
+		LOG.debug("==================================");
+		
+		mv.addObject("vo", vo);
+		mv.setView(downloadView);
+		
+		return mv;
 	}
 }

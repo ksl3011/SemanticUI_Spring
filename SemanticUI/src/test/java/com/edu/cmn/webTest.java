@@ -32,7 +32,7 @@ public class webTest {
 	@Test
 	public void retrieve(){
 		LOG.debug("=====================================");
-		Common.createDownloadFolder();
+		Common.downloadDir();
 		
 	}
 

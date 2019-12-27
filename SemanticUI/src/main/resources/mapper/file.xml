@@ -10,11 +10,13 @@
 			,O_NAME
 			,R_NAME
 			,REG_DT
+			,SIZE
 		) VALUES (
 			#{postNum}
 			,#{oName}
 			,#{rName}
 			,now()
+			,#{size}
 		)
 	</insert>
 
@@ -23,21 +25,22 @@
 			,O_NAME AS oName
 			,R_NAME AS RName
 			,REG_DT AS regDt
+			,SIZE AS size
 		FROM FILESTORE
 		WHERE POST_NUM = #{postNum}
 		ORDER BY REG_DT
 	</select>
 
 	<select id="selectOne" parameterType="FileVO" resultType="FileVO">	
-		SELECT PATH
+		SELECT *
 		FROM FILESTORE
 		WHERE POST_NUM = #{postNum}
 		AND R_Name = #{rName}
 	</select>
 	
-	<select id="delete" parameterType="FileVO" resultType="FileVO">
+	<delete id="delete" parameterType="BoardVO">
 		DELETE FROM FILESTORE
-		AND POST_NUM = #{postNum}
-	</select>
+		WHERE POST_NUM = #{postNum}
+	</delete>
 
 </mapper>

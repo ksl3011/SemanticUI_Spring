@@ -58,18 +58,16 @@ public class Common {
 		return sb.toString();
 	}
 	
-	public static String createDownloadFolder() {
+	public static String downloadDir() {
 		//String path = "/resources/download"; // c://resources/download
 		
 		Calendar c = Calendar.getInstance();
 		StringBuilder path = new StringBuilder("/download/" + c.get(Calendar.YEAR) + "/" + (c.get(Calendar.MONTH)+1) +"/" + c.get(Calendar.DATE));
 
 		File file = new File(path.toString());
-		System.out.println("exist : "  + file.exists());
-		System.out.println(file.getAbsolutePath());
-		
-		System.out.println(file.mkdirs());
-		
+		if(!file.exists()) {
+			file.mkdirs();		
+		}
 		return file.getPath();
 	}
 	public static void main(String args[]) {

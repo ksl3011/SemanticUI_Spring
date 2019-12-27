@@ -1,5 +1,7 @@
 package com.edu.board.impl;
 
+import java.io.File;
+import java.util.Iterator;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.edu.board.DTO;
 import com.edu.board.FileDAO;
+import com.edu.cmn.Common;
 import com.edu.vo.BoardVO;
 import com.edu.vo.FileVO;
 import com.edu.vo.SearchVO;
@@ -109,7 +112,7 @@ public class FileDAOImpl implements FileDAO {
 
 	@Override
 	public int delete(DTO dto) {
-		FileVO vo = (FileVO) dto;
+		BoardVO vo = (BoardVO) dto;
 		
 		LOG.debug("==================================");
 		LOG.debug("1/2) DAO: File delete");
@@ -117,6 +120,15 @@ public class FileDAOImpl implements FileDAO {
 		LOG.debug("==================================");
 		
 		String statement = this.NAMESPACE + ".delete";
+		
+
+		String path = Common.downloadDir();
+		List<FileVO> l = (List<FileVO>) this.retrieve(dto);
+		Iterator<FileVO> ir = l.iterator();
+		while(ir.hasNext()) {
+			File f = new File(path + File.separator + ir.next().getrName());
+			f.delete();
+		}
 		
 		int flag = sqlSessionTemplate.delete(statement, vo);
 		

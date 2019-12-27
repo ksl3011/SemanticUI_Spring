@@ -68,7 +68,7 @@
 							</div>
 							<br/>
 							<button onclick="javascript:post();">제출</button>
-							<button onclick="javascript:index();">목록</button>
+							<button type="button" onclick="javascript:index();">목록</button>
 						</td>
 				    </tr>
 				</tbody>
