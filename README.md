@@ -1,6 +1,6 @@
 # SemanticUI_Spring
-semanticUI 정리
+semanticUI를 사용한 게시판 연습 프로젝트 입니다.
 
 * 게시판
-  * CRD
-  * File Upload
+  * CRUD
+  * File System
