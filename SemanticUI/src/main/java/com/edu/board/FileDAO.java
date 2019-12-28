@@ -9,5 +9,6 @@ public interface FileDAO {
 	public DTO selectOne(DTO dto);
 	public int update(DTO dto);
 	public int delete(DTO dto);
+	public int deleteOne(DTO dto);
 	
 }

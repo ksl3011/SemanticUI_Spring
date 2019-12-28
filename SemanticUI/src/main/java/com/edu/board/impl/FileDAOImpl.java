@@ -121,6 +121,7 @@ public class FileDAOImpl implements FileDAO {
 		
 		String statement = this.NAMESPACE + ".delete";
 		
+		
 
 		String path = Common.downloadDir();
 		List<FileVO> l = (List<FileVO>) this.retrieve(dto);
@@ -129,7 +130,6 @@ public class FileDAOImpl implements FileDAO {
 			File f = new File(path + File.separator + ir.next().getrName());
 			f.delete();
 		}
-		
 		int flag = sqlSessionTemplate.delete(statement, vo);
 		
 		LOG.debug("==================================");
@@ -140,6 +140,31 @@ public class FileDAOImpl implements FileDAO {
 		return flag;
 	}
 
-
+	@Override
+	public int deleteOne(DTO dto) {
+		FileVO vo = (FileVO) dto;
+		
+		LOG.debug("==================================");
+		LOG.debug("1/2) DAO: deleteOne");
+		LOG.debug("1/2) vo : " + vo.toString());
+		LOG.debug("==================================");
+		
+		String statement = this.NAMESPACE + ".deleteOne";
+		
+		
+		
+		String path = Common.downloadDir();
+		File f = new File(path + File.separator + vo.getrName());
+		f.delete();
+		
+		int flag = sqlSessionTemplate.delete(statement, vo);
+		
+		LOG.debug("==================================");
+		LOG.debug("2/2) DAO: deleteOne");
+		LOG.debug("2/2) flag : " + flag);
+		LOG.debug("==================================");
+		
+		return flag;
+	}
 
 }

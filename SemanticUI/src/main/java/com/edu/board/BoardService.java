@@ -9,5 +9,4 @@ public interface BoardService {
 	public DTO selectOne(DTO dto);
 	public int update(DTO dto);
 	public int delete(DTO dto);
-	
 }

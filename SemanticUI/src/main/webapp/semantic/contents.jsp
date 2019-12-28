@@ -4,10 +4,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="context" value="${pageContext.request.contextPath}"/>
-<%
-	String context = request.getContextPath(); 
-	List<FileVO> files = (List<FileVO>) request.getAttribute("fileList");
-%>
+<%String context = request.getContextPath();%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,11 +71,14 @@
 		<input type="hidden" name="size" value="">
 	</form>
 
-	<form action="delete" method="post">
-		<input type="hidden" name="pw" value="${selectPost.pw}">
+	<form action="" method="post" id="UDForm">
+		<input type="hidden" name="pw" value="">
 		<input type="hidden" name="postNum" value="${selectPost.postNum}">
-		<input type="submit" value="삭제">
 	</form>
+
+	<input type="button" value="삭제" id="delete">
+	<input type="button" value="수정" id="update">
+	
 	<jsp:include page="board.jsp"/>
 
 <script
@@ -90,6 +90,28 @@
 <script src="${context}/css/components/rating.js"></script>
 <script type="text/javascript">
 
+	$("#update").on("click", function(){
+		var input = prompt("Password");
+		var pw ="${selectPost.pw}";
+		if(pw != input) return;
+		
+		var $f = $("#UDForm");
+		$("input[name='pw']")[0].value = pw;
+		$f.attr("action", "update");
+		$f.submit();
+	});
+
+	$("#delete").on("click", function(){
+		var input = prompt("Password");
+		var pw = "${selectPost.pw}";
+		if(pw != input) return;
+		
+		var $f = $("#UDForm");
+		$("input[name='pw']")[0].value = pw;
+		$f.attr("action", "delete");
+		$f.submit();
+	});
+	
 	$("button[name=downloadBtn]").on("click", function(){
 		var $p = $(this).parent().parent()[0];
 		var $f = $("form[action='download']")[0];

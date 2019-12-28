@@ -43,4 +43,11 @@
 		WHERE POST_NUM = #{postNum}
 	</delete>
 
+	<delete id="deleteOne" parameterType="BoardVO">
+		DELETE FROM FILESTORE
+		WHERE POST_NUM = #{postNum}
+		AND R_NAME = #{rName}
+	</delete>
+
+
 </mapper>

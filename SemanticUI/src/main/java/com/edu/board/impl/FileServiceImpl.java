@@ -45,4 +45,9 @@ public class FileServiceImpl implements FileService {
 		return dao.delete(dto);
 	}
 
+	@Override
+	public int deleteOne(DTO dto) {
+		return dao.deleteOne(dto);
+	}
+	
 }

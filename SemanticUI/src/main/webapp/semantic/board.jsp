@@ -64,7 +64,7 @@
 						    </td>
 						    <td>
 						    	<a onclick="javascript:goContents('${list.postNum}')">${list.title}
-						    	<c:if test="${not empty list.fileCode && list.fileCode == '1'}">
+						    	<c:if test="${not empty list.fileCode && list.fileCode != '0'}">
 						    		<i class="file icon"></i>
 						    	</c:if>
 						    	</a>
@@ -96,7 +96,7 @@
 	
 	<button class="mini ui gray button" id="postBtn">글쓰기</button>
 	
-	<form action="contents" method="get" id="boardFrm">
+	<form action="contents" method="post" id="boardFrm">
 		<input type="hidden" name="postNum" value="0" id="postNum">
 		<input type="hidden" name="pageNum" value="<%=nowPage%>">
 		<input type="hidden" name="pageSize" value="<%=pageSize%>">

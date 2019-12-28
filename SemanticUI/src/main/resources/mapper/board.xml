@@ -75,4 +75,16 @@
 		)
 		AND POST_NUM = #{postNum}
 	</select>
+	
+	<update id="update" parameterType="BoardVO">
+		UPDATE BOARD
+		SET
+			TITLE =  #{title}
+			,PW = #{pw}
+			,USER_ID = #{userId}
+			,CONTENTS = #{contents}
+			,FILE_CODE = #{fileCode}
+		WHERE
+			POST_NUM = #{postNum}
+	</update>
 </mapper>
