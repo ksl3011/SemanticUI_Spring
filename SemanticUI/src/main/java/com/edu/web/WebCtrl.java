@@ -14,11 +14,11 @@ import com.edu.vo.BoardtestVO;
 
 @Controller
 public class WebCtrl {
-	private String webUrl = "board"; 
-	private String webUrl2 = "contents"; 
+	private String webUrl = "board_test"; 
+	private String webUrl2 = "contents_test"; 
 	private int total = 10000000;
 	
-	@RequestMapping(value = "/board")
+	@RequestMapping(value = "/board_test")
 	public String inputData(HttpServletRequest req) {
 		List<BoardtestVO> list = this.list(1, total);
 		req.setAttribute("list", list);
@@ -26,7 +26,7 @@ public class WebCtrl {
 		return webUrl;
 	}
 	
-	@RequestMapping(value = "/contents", method = RequestMethod.GET)
+	@RequestMapping(value = "/contents_test", method = RequestMethod.GET)
 	public String outputData(HttpServletRequest req) {
 		int no = Integer.parseInt(req.getParameter("no"));
 		int nowPage = Integer.parseInt(req.getParameter("nowPage"));

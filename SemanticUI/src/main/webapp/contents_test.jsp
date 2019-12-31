@@ -23,7 +23,7 @@
 	  </tbody>
 	</table>
 	
-	<jsp:include page="board.jsp"/>
+	<jsp:include page="board_test.jsp"/>
 
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
